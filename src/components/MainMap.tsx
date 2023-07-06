@@ -196,7 +196,7 @@ import { MainMapType } from "../types/MainMapTypes";
 // import { mauritiusPolygons } from "../data/mauritiusPolygons";
 // import { comorosPolygons } from "../data/comorosPolygons";
 // import { saotomeandprincipePolygons } from "../data/saotomeandprincipePolygons";
-import { philippinesPolygons } from "../data/philippinesPolygons";
+// import { philippinesPolygons } from "../data/philippinesPolygons";
 
 // южная Америка
 // import { argentina1Polygons } from "../data/argentina1Polygons";
@@ -250,7 +250,7 @@ import { philippinesPolygons } from "../data/philippinesPolygons";
 // import { sinteustatiusandsabaPolygons } from "../data/sinteustatiusandsabaPolygons";
 // import { virginislandsUKPolygons } from "../data/virginislandsUKPolygons";
 // import { virginislandsUSPolygons } from "../data/virginislandsUSPolygons";
-import { сaymanislandsPolygons } from "../data/сaymanislandsPolygons";
+// import { сaymanislandsPolygons } from "../data/сaymanislandsPolygons";
 // import { tabascoPolygons } from "../data/tabascoPolygons";
 // import { guadeloupePolygons } from "../data/guadeloupePolygons";
 // import { clippertonPolygons } from "../data/clippertonPolygons";
@@ -606,7 +606,7 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // northmacedoniaPolygons,
     // qatarPolygons,
     // thailandPolygons,
-    philippinesPolygons,
+    // philippinesPolygons,
     // vietnamPolygons,
     // easttimorPolygons,
     // vanuatuPolygons,
@@ -726,7 +726,7 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // sinteustatiusandsabaPolygons,
     // virginislandsUKPolygons,
     // virginislandsUSPolygons,
-    сaymanislandsPolygons,
+    // сaymanislandsPolygons,
     // tabascoPolygons,
     // guadeloupePolygons,
     // clippertonPolygons,
