@@ -32,6 +32,7 @@ export const LandsBlock: FC = () => {
             <Skeleton
               sx={{ bgcolor: "rgba(41, 171, 226, 0.5)", borderRadius: "5px" }}
               variant="rectangular"
+              style={{marginTop: 8, marginBottom: 8}}
               width={100}
               height={20}
             />
@@ -116,7 +117,6 @@ export const LandsBlock: FC = () => {
         <Skeleton
           sx={{ bgcolor: "rgba(41, 171, 226, 0.5)", borderRadius: "10px" }}
           variant="rectangular"
-          style={{ marginBottom: 24 }}
           width="100%"
           height={204}
         />

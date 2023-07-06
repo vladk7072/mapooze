@@ -32,7 +32,7 @@ import { MainMapType } from "../types/MainMapTypes";
 // import { latviaPolygons } from "../data/latviaPolygons";
 // import { lithuaniaPolygons } from "../data/lithuaniaPolygons";
 // import { norwayPolygons } from "../data/norwayPolygons";
-import { swedenPolygons } from "../data/swedenPolygons";
+// import { swedenPolygons } from "../data/swedenPolygons";
 // import { denmarkPolygons } from "../data/denmarkPolygons";
 // import { mongoliaPolygons } from "../data/mongoliaPolygons";
 // import { china1Polygons } from "../data/china1Polygons";
@@ -47,7 +47,6 @@ import { swedenPolygons } from "../data/swedenPolygons";
 // import { india5Polygons } from "../data/india5Polygons";
 // import { nepalPolygons } from "../data/nepalPolygons";
 // import { srilankaPolygons } from "../data/srilankaPolygons";
-// import { innerMongoliaPolygons } from "../data/innerMongoliaPolygons";
 // import { taiwanPolygons } from "../data/taiwanPolygons";
 // import { pakistanPolygons } from "../data/pakistanPolygons";
 // import { iranPolygons } from "../data/iranPolygons";
@@ -514,7 +513,7 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // latviaPolygons,
     // lithuaniaPolygons,
     // norwayPolygons,
-    swedenPolygons,
+    // swedenPolygons,
     // denmarkPolygons,
     // mongoliaPolygons,
     // china1Polygons,
@@ -529,7 +528,6 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // india5Polygons,
     // nepalPolygons,
     // srilankaPolygons,
-    // innerMongoliaPolygons,
     // taiwanPolygons,
     // pakistanPolygons,
     // iranPolygons,

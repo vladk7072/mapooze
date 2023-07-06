@@ -62,11 +62,21 @@ export default function App() {
       dispatch(setVisibleAside(true));
     }
 
-    
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (
+        (event.metaKey && event.key === "e") ||
+        (event.ctrlKey && event.key === "e")
+      ) {
+        event.preventDefault();
+        dispatch(setVisibleAside());
+      }
+    };
 
+    window.addEventListener("keydown", handleKeyPress);
     window.addEventListener("resize", handleChangeWidthClient);
     return () => {
       window.removeEventListener("resize", handleChangeWidthClient);
+      window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
   useEffect(() => {
@@ -84,8 +94,6 @@ export default function App() {
       dispatch(setVisibleAside(true));
     }
   }, [widthClient]);
-
-
 
   return (
     <section className="main">

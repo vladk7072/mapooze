@@ -599,7 +599,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    padding-top: 30px;
+    margin-top: auto;
     min-height: 46px;
     grid-gap: 10px;
     overflow: hidden;
@@ -3749,6 +3750,10 @@
   }
   &__wrapper {
     padding-top: 24px;
+    min-height: calc(100vh - 194px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   &__select {
     max-width: 100%;
