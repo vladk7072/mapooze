@@ -70,7 +70,7 @@ export const LandBlock: FC<IProps> = ({ title }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_380_59926)">
+              <g clipPath="url(#clip0_380_59926)">
                 <path
                   d="M7.63456 18.797L0.986695 15.545L7.62853 24.5L8.62636 23.1545V18.3103L7.63456 18.797ZM7.62853 0.5L0 14.2144H15.2572L7.62853 0.5Z"
                   fill="#29ABE2"

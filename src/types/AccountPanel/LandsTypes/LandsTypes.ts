@@ -18,3 +18,6 @@ export type LandsType = {
 export type IPersonalizationErrors = {
   angle: string
 }
+export type IPutUpForExchangeErrors = {
+  exchangeValue: string;
+}

@@ -25,7 +25,7 @@ export const Preloader: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_363_20298)">
+          <g clipPath="url(#clip0_363_20298)">
             <path
               d="M39.8112 0.583814C33.5761 0.0167359 30.2536 3.24862 29.2121 4.27213C27.401 6.05174 24.5301 9.50953 23.2213 11.6487C17.8388 20.4546 16.7144 23.4928 12.6222 30.5513C10.0692 34.9543 7.78813 39.5093 5.24896 43.9215C4.51624 45.1893 3.39643 47.5821 2.94481 50.376C2.30426 54.341 2.95403 57.536 3.40564 58.6747C4.11071 60.4589 6.07845 63.7969 9.85726 65.5903C14.9632 68.0108 20.4471 64.9771 21.8388 64.2072C23.0554 63.5341 25.507 61.9804 30.1338 54.9864C32.9632 50.708 33.4978 49.1036 37.507 41.6163C41.8849 33.4467 44.0738 29.3619 45.802 26.402C48.6683 21.5012 49.9402 19.6893 50.4103 16.2591C50.6591 14.4657 51.1891 10.1273 48.5669 6.11628C48.0508 5.32329 45.9863 2.27122 42.1153 1.04485C41.7559 0.934203 40.9079 0.685242 39.8112 0.583814Z"
               fill="url(#paint0_linear_363_20298)"
@@ -72,10 +72,10 @@ export const Preloader: FC = () => {
               y2="48.3295"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00A8F3" />
-              <stop offset="0.3392" stop-color="#0AA9EF" />
-              <stop offset="0.9115" stop-color="#24ABE4" />
-              <stop offset="1" stop-color="#29ABE2" />
+              <stop stopColor="#00A8F3" />
+              <stop offset="0.3392" stopColor="#0AA9EF" />
+              <stop offset="0.9115" stopColor="#24ABE4" />
+              <stop offset="1" stopColor="#29ABE2" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_363_20298"
@@ -85,10 +85,10 @@ export const Preloader: FC = () => {
               y2="33.029"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00A8F3" />
-              <stop offset="0.3392" stop-color="#0AA9EF" />
-              <stop offset="0.9115" stop-color="#24ABE4" />
-              <stop offset="1" stop-color="#29ABE2" />
+              <stop stopColor="#00A8F3" />
+              <stop offset="0.3392" stopColor="#0AA9EF" />
+              <stop offset="0.9115" stopColor="#24ABE4" />
+              <stop offset="1" stopColor="#29ABE2" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_363_20298"
@@ -98,10 +98,10 @@ export const Preloader: FC = () => {
               y2="33.029"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00A8F3" />
-              <stop offset="0.3392" stop-color="#0AA9EF" />
-              <stop offset="0.9115" stop-color="#24ABE4" />
-              <stop offset="1" stop-color="#29ABE2" />
+              <stop stopColor="#00A8F3" />
+              <stop offset="0.3392" stopColor="#0AA9EF" />
+              <stop offset="0.9115" stopColor="#24ABE4" />
+              <stop offset="1" stopColor="#29ABE2" />
             </linearGradient>
             <clipPath id="clip0_363_20298">
               <rect width="300" height="89" fill="white" />

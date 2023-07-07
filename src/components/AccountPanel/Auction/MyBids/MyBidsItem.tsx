@@ -109,7 +109,7 @@ export const MyBidsItem: FC<IProps> = ({
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_1001_7245)">
+                  <g clipPath="url(#clip0_1001_7245)">
                     <path
                       d="M8.50175 18.297L1.85388 15.045L8.49571 24L9.49354 22.6545V17.8103L8.50175 18.297ZM8.49571 0L0.867188 13.7144H16.1244L8.49571 0Z"
                       fill="#29ABE2"
@@ -172,7 +172,7 @@ export const MyBidsItem: FC<IProps> = ({
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_1001_7245)">
+                  <g clipPath="url(#clip0_1001_7245)">
                     <path
                       d="M8.50175 18.297L1.85388 15.045L8.49571 24L9.49354 22.6545V17.8103L8.50175 18.297ZM8.49571 0L0.867188 13.7144H16.1244L8.49571 0Z"
                       fill="#29ABE2"

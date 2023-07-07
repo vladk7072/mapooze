@@ -2926,6 +2926,9 @@
   &__list {
     max-height: min-content;
     transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
   }
   &__item {
     padding: 8px;
@@ -3753,7 +3756,6 @@
     min-height: calc(100vh - 194px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
   &__select {
     max-width: 100%;
@@ -4114,6 +4116,11 @@
     display: grid;
     grid-template-columns: minmax(76px, 76px) minmax(auto, auto);
     grid-gap: 0 30px;
+    &-box{
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+    }
   }
   &__sellinput {
     @extend %int-500;

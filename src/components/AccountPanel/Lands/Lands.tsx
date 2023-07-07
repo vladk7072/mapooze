@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
 import { useAppSelector } from "../../../hooks/redux-hooks";
 import { LandsType } from "../../../types/AccountPanel/LandsTypes/LandsTypes";
-import { dataSocials } from "./lands.data";
+import { landsData } from "./lands.data";
 import { LandsBlock } from "./LandsBlock";
 import { SaleNavigation } from "../../SalePanel/SaleNavigation";
 import { Skeleton } from "@mui/material";
@@ -62,8 +62,8 @@ export const Lands: FC<LandsType> = ({ setOpenBar }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L9.41421 12L15.7071 18.2929C16.0976 18.6834 16.0976 19.3166 15.7071 19.7071C15.3166 20.0976 14.6834 20.0976 14.2929 19.7071L7.29289 12.7071C6.90237 12.3166 6.90237 11.6834 7.29289 11.2929L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z"
               fill="white"
               style={{ fill: "white" }}
@@ -94,7 +94,9 @@ export const Lands: FC<LandsType> = ({ setOpenBar }) => {
           <div
             className="saleplace__general-trial saleplace__general-trial-select exchange__select"
             ref={selectLandRef}
-            style={widthClient <= 450 ? { maxWidth: "100%" } : { maxWidth: 290 }}
+            style={
+              widthClient <= 450 ? { maxWidth: "100%" } : { maxWidth: 290 }
+            }
           >
             <div
               className="saleplace__general-trial-inputbox saleplace__general-select"
@@ -123,13 +125,13 @@ export const Lands: FC<LandsType> = ({ setOpenBar }) => {
               </svg>
               {!!selectSocial && (
                 <div className="addwallet__select-title">
-                  {dataSocials[selectSocial].item}
+                  {landsData[selectSocial].item}
                 </div>
               )}
             </div>
             {isActiveList && (
               <ul className="saleplace__general-select-list addwallet__list exchange__list">
-                {dataSocials.map((el, idx) => (
+                {landsData.map((el, idx) => (
                   <li
                     className={
                       selectSocial === idx
@@ -139,6 +141,11 @@ export const Lands: FC<LandsType> = ({ setOpenBar }) => {
                     onClick={() => selectHandler(idx)}
                     key={idx}
                   >
+                    <img
+                      className="saleplace__general-trial-landicon"
+                      src={el.logo}
+                      alt=""
+                    />
                     {el.item}
                   </li>
                 ))}

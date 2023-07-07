@@ -13,7 +13,7 @@ export const CountryActivity: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_380_59957)">
+          <g clipPath="url(#clip0_380_59957)">
             <path
               d="M32 0H4C2.93913 0 1.92172 0.421427 1.17157 1.17157C0.421427 1.92172 0 2.93913 0 4L0 13H36V4C36 2.93913 35.5786 1.92172 34.8284 1.17157C34.0783 0.421427 33.0609 0 32 0Z"
               fill="#005BBB"
@@ -43,7 +43,7 @@ export const CountryActivity: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_380_59969)">
+          <g clipPath="url(#clip0_380_59969)">
             <path
               d="M35.445 2C34.752 0.809 33.477 0 32 0H18V2H35.445ZM0 20H36V22H0V20ZM18 12H36V14H18V12ZM18 8H36V10H18V8ZM0 16H36V18H0V16ZM4 26H32C33.477 26 34.752 25.191 35.445 24H0.555C1.248 25.191 2.523 26 4 26ZM18 4H36V6H18V4Z"
               fill="#B22334"
@@ -81,7 +81,7 @@ export const CountryActivity: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_380_59983)">
+          <g clipPath="url(#clip0_380_59983)">
             <path
               d="M0 4.059V8H5.628L0 4.059ZM4.664 26H13V20.163L4.664 26ZM23 20.164V26H31.335L23 20.164ZM0 18V21.941L5.63 18H0ZM31.337 0H23V5.837L31.337 0ZM36 21.942V18H30.369L36 21.942ZM36 8V4.059L30.371 8H36ZM13 0H4.664L13 5.837V0Z"
               fill="#00247D"
@@ -119,7 +119,7 @@ export const CountryActivity: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_380_59997)">
+          <g clipPath="url(#clip0_380_59997)">
             <path
               d="M0 22C0 23.0609 0.421427 24.0783 1.17157 24.8284C1.92172 25.5786 2.93913 26 4 26H32C33.0609 26 34.0783 25.5786 34.8284 24.8284C35.5786 24.0783 36 23.0609 36 22V18H0V22Z"
               fill="#FFCD05"
@@ -150,7 +150,7 @@ export const CountryActivity: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_380_60009)">
+          <g clipPath="url(#clip0_380_60009)">
             <path
               d="M36 22C36 23.0609 35.5786 24.0783 34.8284 24.8284C34.0783 25.5786 33.0609 26 32 26H24V0H32C33.0609 0 34.0783 0.421427 34.8284 1.17157C35.5786 1.92172 36 2.93913 36 4V22Z"
               fill="#ED2939"
@@ -181,7 +181,7 @@ export const CountryActivity: FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_380_60021)">
+          <g clipPath="url(#clip0_380_60021)">
             <path
               d="M32 0H4C3.795 0 3.593 0.0150001 3.396 0.0450001L3.392 1.799L0.662004 1.795C0.229151 2.44884 -0.00113204 3.21587 4.18442e-06 4V22C4.18442e-06 23.0609 0.421432 24.0783 1.17158 24.8284C1.92172 25.5786 2.93914 26 4 26H32C33.0609 26 34.0783 25.5786 34.8284 24.8284C35.5786 24.0783 36 23.0609 36 22V4C36 2.93913 35.5786 1.92172 34.8284 1.17157C34.0783 0.421427 33.0609 0 32 0Z"
               fill="#00247D"

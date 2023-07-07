@@ -1,37 +1,58 @@
-export const dataSocials = [
+import svg1 from "../../../assets/images/account/lands/1.svg";
+import svg2 from "../../../assets/images/account/lands/2.svg";
+import svg3 from "../../../assets/images/account/lands/3.svg";
+import svg4 from "../../../assets/images/account/lands/4.svg";
+import svg5 from "../../../assets/images/account/lands/5.svg";
+
+//@ts-ignore
+import img1 from "../../../assets/images/mylands/1.jpg";
+//@ts-ignore
+import img2 from "../../../assets/images/mylands/2.jpg";
+//@ts-ignore
+import img3 from "../../../assets/images/mylands/3.jpg";
+
+export const landsData = [
+  {
+    id: 0,
+    item: "",
+    logo: "",
+  },
+  {
+    id: 1,
+    item: "Auctioned land",
+    logo: svg1,
+  },
+  {
+    id: 2,
+    item: "Exchanged land",
+    logo: svg2,
+  },
+  {
+    id: 3,
+    item: "Land on lease",
+    logo: svg3,
+  },
+  {
+    id: 4,
+    item: "Purchased land",
+    logo: svg4,
+  },
+  {
+    id: 5,
+    item: "Lottery land",
+    logo: svg5,
+  },
+];
+export const exchangeData = [
   {
     id: 0,
     item: "",
   },
   {
     id: 1,
-    item: "Reine, Norway",
+    item: "All Lands",
   },
-  {
-    id: 2,
-    item: "Reine, Norway 1",
-  },
-  {
-    id: 3,
-    item: "Reine, Norway 2",
-  },
-  {
-    id: 4,
-    item: "Reine, Norway 3",
-  },
-  {
-    id: 5,
-    item: "Reine, Norway 4",
-  },
-  {
-    id: 6,
-    item: "Reine, Norway 5",
-  },
-  {
-    id: 7,
-    item: " Reine, Norway 6",
-  },
-];
+]
 
 export const dataMarkers = [
   {
@@ -290,7 +311,7 @@ export const dataWeight = [
 export const dataSize = [
   {
     id: 0,
-    size: 0
+    size: 0,
   },
   {
     id: 1,
@@ -366,10 +387,4 @@ export const dataSize = [
   },
 ];
 
-//@ts-ignore
-import img1 from "../../../assets/images/mylands/1.jpg";
-//@ts-ignore
-import img2 from "../../../assets/images/mylands/2.jpg";
-//@ts-ignore
-import img3 from "../../../assets/images/mylands/3.jpg";
 export const landsPhoto = [img1, img2, img3];

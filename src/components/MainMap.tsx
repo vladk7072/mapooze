@@ -25,7 +25,6 @@ import { MainMapType } from "../types/MainMapTypes";
 // import { russia2Polygons } from "../data/russia2Polygons";
 // import { russia3Polygons } from "../data/russia3Polygons";
 // import { polandPolygons } from "../data/polandPolygons";
-// import { adygeaPolygons } from "../data/adygeaPolygons";
 // import { finlandPolygons } from "../data/finlandPolygons";
 // import { belarusPolygons } from "../data/belarusPolygons";
 // import { estoniaPolygons } from "../data/estoniaPolygons";
@@ -133,7 +132,7 @@ import { MainMapType } from "../types/MainMapTypes";
 // import { solomonislandsPolygons } from "../data/solomonislandsPolygons";
 // import { vanuatuPolygons } from "../data/vanuatuPolygons";
 // import { djiboutiPolygons } from "../data/djiboutiPolygons";
-// import { cyprusPolygons } from "../data/cyprusPolygons";
+import { cyprusPolygons } from "../data/cyprusPolygons";
 // import { azerbaijanPolygons } from "../data/azerbaijanPolygons";
 // import { faroeislandsPolygons } from "../data/faroeislandsPolygons";
 // import { unitedkingdomsovereignbaseareasPolygons } from "../data/unitedkingdomsovereignbaseareasPolygons";
@@ -196,7 +195,7 @@ import { MainMapType } from "../types/MainMapTypes";
 // import { mauritiusPolygons } from "../data/mauritiusPolygons";
 // import { comorosPolygons } from "../data/comorosPolygons";
 // import { saotomeandprincipePolygons } from "../data/saotomeandprincipePolygons";
-// import { philippinesPolygons } from "../data/philippinesPolygons";
+import { philippinesPolygons } from "../data/philippinesPolygons";
 
 // южная Америка
 // import { argentina1Polygons } from "../data/argentina1Polygons";
@@ -506,7 +505,6 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // russia2Polygons,
     // russia3Polygons,
     // polandPolygons,
-    // adygeaPolygons,
     // finlandPolygons,
     // belarusPolygons,
     // estoniaPolygons,
@@ -606,12 +604,12 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // northmacedoniaPolygons,
     // qatarPolygons,
     // thailandPolygons,
-    // philippinesPolygons,
+    philippinesPolygons,
     // vietnamPolygons,
     // easttimorPolygons,
     // vanuatuPolygons,
     // djiboutiPolygons,
-    // cyprusPolygons,
+    cyprusPolygons,
     // azerbaijanPolygons,
     // walesPolygons,
     // unitedkingdomsovereignbaseareasPolygons,

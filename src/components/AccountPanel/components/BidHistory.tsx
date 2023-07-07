@@ -39,9 +39,9 @@ export const BidHistory: FC<IProps> = ({ isVisibleSkeleton }) => {
               <path
                 d="M8.5026 3.33398V12.6673M8.5026 12.6673L13.1693 8.00065M8.5026 12.6673L3.83594 8.00065"
                 stroke="white"
-                stroke-width="1.33333"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.33333"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>

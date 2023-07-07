@@ -1,16 +1,54 @@
-import { FC } from "react";
+import { FC, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ExchangeType } from "../../../types/AccountPanel/ExchangeTypes/ExchangeTypes";
+import "swiper/swiper-bundle.css";
 import { useAppSelector } from "../../../hooks/redux-hooks";
-import { TopForLands } from "../../../globalComponents/TopForLands";
-import { AsideForLands } from "../../../globalComponents/AsideForLands";
-import { TextForLands } from "../../../globalComponents/TextForLands";
-import { ExchangeRegister } from "./components/ExchangeRegister";
-import { TEXT_CONTENT, slidesPhoto } from "./exchange.data";
-import { SliderForLands } from "../../../globalComponents/SliderForLands";
+import { LandsType } from "../../../types/AccountPanel/LandsTypes/LandsTypes";
+import { SaleNavigation } from "../../SalePanel/SaleNavigation";
+import { Skeleton } from "@mui/material";
+import { ExchangeBlock } from "./ExchangeBlock";
+import { exchangeData } from "../Lands/lands.data";
 
-export const Exchange: FC<ExchangeType> = ({ setOpenBar }) => {
-  const { isMobile } = useAppSelector((state) => state.mainPanelReducer);
+export const Exchange: FC<LandsType> = ({ setOpenBar }) => {
+  const { isMobile, widthClient } = useAppSelector(
+    (state) => state.mainPanelReducer
+  );
+  const [isActiveList, setActiveList] = useState(false);
+  const [selectSocial, setSelectSocial] = useState<null | number>(null);
+
+  const selectHandler = (idx: number) => {
+    setActiveList(false);
+    setSelectSocial(idx);
+  };
+
+  const [isVisibleSkeleton, setIsVisibleSkeleton] = useState({
+    main: true,
+    photo: true,
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisibleSkeleton((prev) => ({ ...prev, main: false }));
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const selectLandRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (
+        selectLandRef.current &&
+        !selectLandRef.current.contains(event.target as Node)
+      ) {
+        setActiveList(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="exchange saleplace addwallet">
@@ -24,8 +62,8 @@ export const Exchange: FC<ExchangeType> = ({ setOpenBar }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L9.41421 12L15.7071 18.2929C16.0976 18.6834 16.0976 19.3166 15.7071 19.7071C15.3166 20.0976 14.6834 20.0976 14.2929 19.7071L7.29289 12.7071C6.90237 12.3166 6.90237 11.6834 7.29289 11.2929L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z"
               fill="white"
               style={{ fill: "white" }}
@@ -52,15 +90,68 @@ export const Exchange: FC<ExchangeType> = ({ setOpenBar }) => {
         </Link>
       </div>
       <div className="exchange__wrapper">
-        <TopForLands />
-        <div className="exchange__inner">
-          <SliderForLands slides={slidesPhoto} />
-          <AsideForLands />
+        <div className="exchange__top">
+          <div
+            className="saleplace__general-trial saleplace__general-trial-select exchange__select"
+            ref={selectLandRef}
+            style={
+              widthClient <= 450 ? { maxWidth: "100%" } : { maxWidth: 290 }
+            }
+          >
+            <div
+              className="saleplace__general-trial-inputbox saleplace__general-select"
+              onClick={() => setActiveList(true)}
+            >
+              <span
+                className={
+                  isActiveList || selectSocial
+                    ? "addwallet__span addwallet__span--active"
+                    : "addwallet__span"
+                }
+              >
+                Select the Land
+              </span>
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.3625 14.3L8.76251 11.7C8.44585 11.3833 8.37518 11.021 8.55051 10.613C8.72585 10.205 9.03818 10.0007 9.48751 10H14.6375C15.0875 10 15.4002 10.2043 15.5755 10.613C15.7508 11.0217 15.6798 11.384 15.3625 11.7L12.7625 14.3C12.6625 14.4 12.5542 14.475 12.4375 14.525C12.3208 14.575 12.1958 14.6 12.0625 14.6C11.9292 14.6 11.8042 14.575 11.6875 14.525C11.5708 14.475 11.4625 14.4 11.3625 14.3Z"
+                  fill="#29ABE2"
+                />
+              </svg>
+              {!!selectSocial && (
+                <div className="addwallet__select-title">
+                  {exchangeData[selectSocial].item}
+                </div>
+              )}
+            </div>
+            {isActiveList && (
+              <ul className="saleplace__general-select-list addwallet__list exchange__list">
+                {exchangeData.map((el, idx) => (
+                  <li
+                    className={
+                      selectSocial === idx
+                        ? "saleplace__general-select-item saleplace__general-select-item--active"
+                        : "saleplace__general-select-item"
+                    }
+                    onClick={() => selectHandler(idx)}
+                    key={idx}
+                  >
+                    {el.item}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
-        <div className="exchange__inner exchange__inner-fdc">
-          <TextForLands text={TEXT_CONTENT} />
-          <ExchangeRegister />
+        <div className="lands__items">
+          <ExchangeBlock />
         </div>
+        {!isVisibleSkeleton.main && <SaleNavigation />}
       </div>
     </div>
   );
