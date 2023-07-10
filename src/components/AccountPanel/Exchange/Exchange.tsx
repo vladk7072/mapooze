@@ -90,7 +90,7 @@ export const Exchange: FC<LandsType> = ({ setOpenBar }) => {
         </Link>
       </div>
       <div className="exchange__wrapper">
-        <div className="exchange__top">
+        <div className="exchange__top" style={{ alignItems: "flex-end" }}>
           <div
             className="saleplace__general-trial saleplace__general-trial-select exchange__select"
             ref={selectLandRef}
@@ -147,9 +147,38 @@ export const Exchange: FC<LandsType> = ({ setOpenBar }) => {
               </ul>
             )}
           </div>
+          <div className="salepanel__filter-inputs exchange__top-inputs">
+            <div className="salepanel__filter-input-title">Price, ETH</div>
+            <input
+              className="salepanel__filter-input"
+              defaultValue={0}
+              type="number"
+            />
+            <span className="span"></span>
+            <input
+              className="salepanel__filter-input"
+              defaultValue={99.999}
+              type="number"
+            />
+          </div>
         </div>
         <div className="lands__items">
           <ExchangeBlock />
+          <ExchangeBlock extra={true} extraPrice={10} />
+          <ExchangeBlock />
+          <ExchangeBlock extra={true} extraPrice={5.3} />
+          <ExchangeBlock extra={true} extraPrice={9} />
+          <ExchangeBlock />
+          <ExchangeBlock extra={true} extraPrice={10} />
+          <ExchangeBlock />
+          <ExchangeBlock extra={true} extraPrice={1.3} />
+          <ExchangeBlock extra={true} extraPrice={31} />
+          <ExchangeBlock />
+          <ExchangeBlock extra={true} extraPrice={5.3} />
+          <ExchangeBlock extra={true} extraPrice={5} />
+          <ExchangeBlock extra={true} extraPrice={7} />
+          <ExchangeBlock />
+          <ExchangeBlock extra={true} extraPrice={5.2} />
         </div>
         {!isVisibleSkeleton.main && <SaleNavigation />}
       </div>

@@ -132,7 +132,7 @@ import { MainMapType } from "../types/MainMapTypes";
 // import { solomonislandsPolygons } from "../data/solomonislandsPolygons";
 // import { vanuatuPolygons } from "../data/vanuatuPolygons";
 // import { djiboutiPolygons } from "../data/djiboutiPolygons";
-import { cyprusPolygons } from "../data/cyprusPolygons";
+// import { cyprusPolygons } from "../data/cyprusPolygons";
 // import { azerbaijanPolygons } from "../data/azerbaijanPolygons";
 // import { faroeislandsPolygons } from "../data/faroeislandsPolygons";
 // import { unitedkingdomsovereignbaseareasPolygons } from "../data/unitedkingdomsovereignbaseareasPolygons";
@@ -609,7 +609,7 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // easttimorPolygons,
     // vanuatuPolygons,
     // djiboutiPolygons,
-    cyprusPolygons,
+    // cyprusPolygons,
     // azerbaijanPolygons,
     // walesPolygons,
     // unitedkingdomsovereignbaseareasPolygons,

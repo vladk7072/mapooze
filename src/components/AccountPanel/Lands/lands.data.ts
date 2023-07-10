@@ -52,6 +52,24 @@ export const exchangeData = [
     id: 1,
     item: "All Lands",
   },
+];
+export const myLands = [
+  {
+    id: 0,
+    item: "",
+  },
+  {
+    id: 1,
+    item: "Land 1",
+  }, 
+  {
+    id: 2,
+    item: "Land 2",
+  }, 
+  {
+    id: 3,
+    item: "Land 3",
+  }, 
 ]
 
 export const dataMarkers = [
