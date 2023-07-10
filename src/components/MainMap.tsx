@@ -1084,7 +1084,7 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
             data={dbbase[idx]}
             style={(feature) => ({
               color:
-                feature?.properties.name === selectedCity ? "red" : "red",
+                feature?.properties.name === selectedCity ? "red" : "green",
               weight: 2,
               opacity: 1,
               fillOpacity: 0.3,
