@@ -7,6 +7,7 @@ interface IInitialState {
   year: string;
   isMobile: boolean;
   widthClient: number;
+  cookieNotification: boolean;
 }
 
 export const initialState: IInitialState = {
@@ -16,18 +17,15 @@ export const initialState: IInitialState = {
   year: "",
   isMobile: false,
   widthClient: 0,
+  cookieNotification: true,
 };
 
 export const mainSlice = createSlice({
   name: "mainSlice",
   initialState,
   reducers: {
-    setDarkTheme(state) {
-      if (state.isDarkTheme) {
-        state.isDarkTheme = false;
-      } else {
-        state.isDarkTheme = true;
-      }
+    setDarkTheme(state, action: PayloadAction<boolean>) {
+      state.isDarkTheme = action.payload;
     },
     userTime(state) {
       const today = new Date();
@@ -42,6 +40,9 @@ export const mainSlice = createSlice({
     },
     setClientWidth(state, action: PayloadAction<number>) {
       state.widthClient = action.payload;
+    },
+    setCookieNotification(state, action: PayloadAction<boolean>) {
+      state.cookieNotification = action.payload;
     },
   },
 });

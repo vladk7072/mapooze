@@ -40,6 +40,16 @@
       }
     }
   }
+  .cookie {
+    transform: translateX(0);
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: 100%;
+    &--open {
+      right: 124px;
+    }
+  }
 }
 @media (max-width: 1370px) {
   .chatpanel {
@@ -857,6 +867,29 @@
       }
     }
   }
+  .cookie {
+    z-index: 10;
+    flex-direction: column;
+    &__box {
+      flex-direction: column;
+      align-items: center;
+    }
+    &--open {
+      right: 16px;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__text {
+      & + & {
+        margin-top: 23px;
+      }
+    }
+    &__btn {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
 }
 @media (max-width: 720px) {
   .saleplace {
@@ -1297,6 +1330,32 @@
   .cardinfo {
     &__current {
       grid-gap: 6px;
+    }
+  }
+  .cookie {
+    top: 81px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 3px; /* высота всей полосы прокрутки */
+    }
+    
+    &::-webkit-scrollbar-track {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      border-radius: 2px;
+      background: transparent; /* цвет зоны отслеживания */
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #29abe2; /* цвет бегунка */
+      border-radius: 2px; /* округлось бегунка */
+    }
+    &__box {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-gap: 25px;
     }
   }
 }

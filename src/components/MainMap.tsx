@@ -13,7 +13,8 @@ import {
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import "leaflet/dist/leaflet.css";
 import "../app.scss";
-import { MainMapType } from "../types/MainMapTypes";
+import { MainMapType, MapStateType } from "../types/MainMapTypes";
+import { ZoomLogger } from "../utils/mapZoomLogger";
 
 // import { antarcticaPolygons } from "../data/antarcticaPolygons";
 
@@ -973,103 +974,35 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
   };
   const [activeCity, setActiveCity] = useState<activeCitiesType | null>(null);
 
-  // const cities = [
-  //   {
-  //     name: "Киев",
-  //     position: [50.4501, 30.5234],
-  //     population: 2967366,
-  //   },
-  //   {
-  //     name: "Харьков",
-  //     position: [50.0047, 36.2314],
-  //     population: 1441669,
-  //   },
-  //   {
-  //     name: "Одесса",
-  //     position: [46.4825, 30.7233],
-  //     population: 993120,
-  //   },
-  //   {
-  //     name: "Днепр",
-  //     position: [48.4647, 35.0462],
-  //     population: 1015658,
-  //   },
-  //   {
-  //     name: "Львов",
-  //     position: [49.8397, 24.0297],
-  //     population: 724314,
-  //   },
-  // ];
-  const handleCityClick = (city: any) => {
-    setActiveCity(city);
-  };
-
-  const [selectedCity, setSelectedCity] = useState(null);
-
   const navigate = useNavigate();
   const navigateHandler = () => {
     navigate("/");
   };
 
-  // чтоб ставить маркер
-  // const [markerPosition, setMarkerPosition] = useState(null);
-
-  // function handleMapClick(e: any) {
-  //   setMarkerPosition(e.latlng);
-  // }
-
-  // function SearchControl() {
-  //   useMapEvents({
-  //     click: handleMapClick,
-  //   });
-
-  //   return null;
-  // }
-
-  // const [markerPosition, setMarkerPosition] = useState<number[] | null>(null);
-
-  // function handleSearchResult(result: { x: 50.494542; y: 30.463197 }) {
-  //   const { x, y } = result;
-  //   setMarkerPosition([y, x]);
-  // }
-
-  // function MapSearch() {
-  //   const map = useMap();
-
-  //   // @ts-ignore
-  //   const searchControl = new GeoSearchControl({
-  //     provider: new OpenStreetMapProvider(),
-  //     showMarker: false,
-  //     resultFormat: "geojson",
-  //   });
-
-  //   searchControl.on("results", (data: any) => {
-  //     if (data.results.length > 0) {
-  //       const { lat, lon } = data.results[0].geometry;
-  //       map.flyTo([lat, lon], 13);
-  //       setMarkerPosition([lat, lon]);
-  //     }
-  //   });
-
-  //   map.addControl(searchControl);
-
-  //   return null;
-  // }
+  const [mapState, setMapState] = useState<MapStateType>({
+    initialZoom: 3,
+    targetZoom: 3,
+  });
 
   return (
     <div className="mainmap__wrapper" onClick={() => navigateHandler()}>
       <MapContainer
         center={[49.0238, 11.2292]}
         minZoom={window.innerWidth <= 768 ? 2 : 3}
-        zoom={3}
+        zoom={mapState.initialZoom}
         maxZoom={18}
         maxBounds={L.latLngBounds(L.latLng(-90, -170), L.latLng(90, 190))}
         maxBoundsViscosity={1}
         className="mainmap"
       >
+        <ZoomLogger setMapState={setMapState} />
         {/* main */}
         {isDarkTheme ? (
-          <TileLayer url="https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default//GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg" />
+          mapState.targetZoom >= 8 ? (
+            <TileLayer url="https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png" />
+          ) : (
+            <TileLayer url="https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default//GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg" />
+          )
         ) : (
           // main
           <TileLayer url="http://mt0.google.com/vt/lyrs=s,h&hl=en&x={x}&y={y}&z={z}&s=Ga" />
@@ -1082,36 +1015,14 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
           <GeoJSON
             key={idx}
             data={dbbase[idx]}
-            style={(feature) => ({
-              color:
-                feature?.properties.name === selectedCity ? "red" : "#29ABE2",
-              weight: 2,
+            style={() => ({
+              color: "#29ABE2",
+              weight: mapState.targetZoom >= 8 ? 3 : 2,
               opacity: 1,
-              fillOpacity: 0.3,
+              fillOpacity: mapState.targetZoom >= 8 ? 0.2 : 0.3,
             })}
-            onEachFeature={(feature, layer) => {
-              // Привязываем событие клика к гео-объекту
-              layer.on("click", handleCityClick);
-            }}
           />
         ))}
-        {/* {cities.map((city) => (
-        <Marker
-          key={city.name}
-          position={city.position}
-          icon={L.icon({
-            iconUrl: "marker.svg",
-            iconSize: [32, 32],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -32],
-          })}
-          eventHandlers={{
-            click: () => {
-              handleCityClick(city);
-            },
-          }}
-        />
-      ))} */}
         {activeCity && (
           // @ts-ignore
           <Popup position={activeCity.position}>
@@ -1122,10 +1033,6 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
             </div>
           </Popup>
         )}
-
-        {/* чтобы ставить маркер */}
-        {/* <SearchControl />
-        {markerPosition && <Marker position={markerPosition} />} */}
       </MapContainer>
     </div>
   );

@@ -1,18 +1,19 @@
 import { FC } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
-import { mainSlice } from "../../../store/slices/main.slice";
+import { useAppSelector } from "../../../hooks/redux-hooks";
 
-export const MobTheme: FC = () => {
+interface IProps {
+  handleTheme: () => void
+}
+
+export const MobTheme: FC<IProps> = ({handleTheme}) => {
   
-  const dispatch = useAppDispatch();
   const { isDarkTheme } = useAppSelector((state) => state.mainPanelReducer);
-  const { setDarkTheme } = mainSlice.actions;
 
   return (
     <div className="asidepanel__theme asidepanel__theme-mob">
       <div
         className="asidepanel__theme-btn"
-        onClick={() => dispatch(setDarkTheme())}
+        onClick={() => handleTheme()}
       >
         <svg
           width="32"

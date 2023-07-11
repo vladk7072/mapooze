@@ -25,11 +25,25 @@ export const AsidePanel: FC = () => {
     dispatch(setVisibleAside());
   };
 
+  const handleTheme = () => {
+    dispatch(setDarkTheme(!isDarkTheme));
+    localStorage.setItem("isDarkTheme", isDarkTheme ? "false" : "true");
+  };
+
+  useEffect(() => {
+    const isDarkThemeTarget = localStorage.getItem("isDarkTheme");
+    if (isDarkThemeTarget === "true") {
+      dispatch(setDarkTheme(true));
+    } else {
+      dispatch(setDarkTheme(false));
+    }
+  }, []);
+
   return (
     <>
       <Header />
       {/* this component visible only before 768px */}
-      <MobTheme />
+      <MobTheme handleTheme={handleTheme} />
       <NavLink
         className="asidepanel__chat asidepanel__chat-mob"
         to="chat"
@@ -109,10 +123,7 @@ export const AsidePanel: FC = () => {
           </div>
         </NavLink>
         <div className="asidepanel__theme">
-          <div
-            className="asidepanel__theme-btn"
-            onClick={() => dispatch(setDarkTheme())}
-          >
+          <div className="asidepanel__theme-btn" onClick={() => handleTheme()}>
             <svg
               width="32"
               height="32"

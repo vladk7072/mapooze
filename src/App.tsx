@@ -23,6 +23,7 @@ import { mainSlice } from "./store/slices/main.slice";
 import { asidePanelSlice } from "./store/slices/asidePanel.slice";
 import { SalePanel } from "./components/SalePanel/SalePanel";
 import { SalePlace } from "./components/SalePanel/SalePlace";
+import { Cookie } from "./components/Cookie/Cookie";
 
 export default function App() {
   const { isDarkTheme, widthClient } = useAppSelector(
@@ -171,6 +172,7 @@ export default function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <Cookie />
     </section>
   );
 }

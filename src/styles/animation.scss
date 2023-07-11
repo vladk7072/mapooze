@@ -22,3 +22,13 @@
     transform: scale(1);
   }
 }
+@keyframes cookie {
+  0%{
+    transform: translateY(80%) translateX(-50%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}

@@ -1,5 +1,8 @@
-
-
 export type MainMapType = {
-  isDarkTheme: boolean
-}
+  isDarkTheme: boolean;
+};
+
+export type MapStateType = {
+  initialZoom: number;
+  targetZoom: number;
+};
