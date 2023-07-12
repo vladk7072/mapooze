@@ -1,16 +1,22 @@
-import { FC, useState, useEffect, useRef } from "react";
+import { FC, useState, Dispatch, SetStateAction } from 'react';
 import img1 from "../../../assets/images/account/lands3.jpg";
 import logo1 from "../../../assets/images/account/logo.jpg";
 import { useNavigate } from "react-router-dom";
 import { Skeleton } from "@mui/material";
 import cn from "clsx";
 
+type IsVisibleSkeletonType = { main: boolean; photo: boolean };
 interface IProps {
-  isVisibleSkeleton: { main: boolean; photo: boolean };
+  isVisibleSkeleton: IsVisibleSkeletonType;
   status: "free" | "inrent" | "forrent" | "exchange" | "auction";
+  setIsVisibleSkeleton: Dispatch<SetStateAction<IsVisibleSkeletonType>>
 }
 
-export const SalePanelBlock: FC<IProps> = ({ status, isVisibleSkeleton }) => {
+export const SalePanelBlock: FC<IProps> = ({
+  status,
+  isVisibleSkeleton,
+  setIsVisibleSkeleton,
+}) => {
   const navigate = useNavigate();
   const handlerNavigate = (link: string) => {
     navigate(link);

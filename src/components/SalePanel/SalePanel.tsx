@@ -135,82 +135,101 @@ export const SalePanel: FC<SalePanelType> = ({ isOpenAside }) => {
               }}
             />
           </div>
-          {/* <div className="salepanel__safe" style={{ padding: 0 }}>
+          <div className="salepanel__safe" style={{ padding: 0 }}>
             <div
               className="lands__items"
               style={{ margin: 0, marginRight: 10 }}
             >
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"free"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"inrent"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"forrent"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"exchange"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"auction"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"inrent"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"auction"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"exchange"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"free"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"inrent"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"auction"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"exchange"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"free"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"inrent"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"auction"}
               />
               <SalePanelBlock
                 isVisibleSkeleton={isVisibleSkeleton}
+                setIsVisibleSkeleton={setIsVisibleSkeleton}
                 status={"exchange"}
               />
             </div>
+            {isVisibleSkeleton.main && (
+              <div style={widthClient < 1025 ? { marginBottom: 0 } : { marginBottom: 35 }}> </div>
+            )}
             {!isVisibleSkeleton.main && (
               <div style={widthClient < 1025 ? { marginBottom: 0 } : { marginBottom: 35 }}>
                 <SaleNavigation />
               </div>
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
