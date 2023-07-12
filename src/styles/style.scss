@@ -367,29 +367,6 @@
   }
 }
 .salepanel {
-  &__safe {
-    overflow-x: auto;
-    padding-bottom: 8px;
-    padding-right: 8px;
-    &::-webkit-scrollbar {
-      height: 4px; /* высота всей полосы прокрутки */
-      width: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      margin-bottom: 16px;
-      margin-right: 16px;
-      margin-left: 16px;
-      border-radius: 4px;
-      background: rgba(#fff, 0.2); /* цвет зоны отслеживания */
-    }
-
-    &::-webkit-scrollbar-thumb {
-      height: 4px;
-      background-color: #29abe2; /* цвет бегунка */
-      border-radius: 4px; /* округлось бегунка */
-    }
-  }
   &__box {
     &-df {
       display: flex;
@@ -605,6 +582,7 @@
     grid-gap: 10px;
     overflow: hidden;
     grid-column: 2 / 2;
+    margin: 0 20px 0 12px;
     &-pagination {
       display: flex;
       justify-content: center;
@@ -663,7 +641,7 @@
   &__filter {
     &-inner {
       display: grid;
-      grid-template-columns: minmax(auto, 204px) minmax(auto, auto);
+      grid-template-columns: 204px minmax(auto, 100%);
       grid-gap: 0 50px;
       justify-content: space-between;
     }
@@ -707,6 +685,29 @@
     }
     &-slider {
       transform: scale(0.952);
+    }
+  }
+  &__safe{
+    height: calc(100vh - 89px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding-right: 15px;
+    &::-webkit-scrollbar {
+      width: 3px; /* высота всей полосы прокрутки */
+    }
+
+    &::-webkit-scrollbar-track {
+      margin-top: 12px;
+      margin-bottom: 112px;
+      border-radius: 2px;
+      background: transparent; /* цвет зоны отслеживания */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #29abe2; /* цвет бегунка */
+      border-radius: 2px; /* округлось бегунка */
     }
   }
 }

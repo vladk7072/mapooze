@@ -1019,7 +1019,8 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
               color: "#29ABE2",
               weight: mapState.targetZoom >= 8 ? 3 : 2,
               opacity: 1,
-              fillOpacity: mapState.targetZoom >= 8 ? 0.2 : 0.3,
+              fillOpacity: 0.3,
+              // fillOpacity: mapState.targetZoom >= 8 ? 0.2 : 0.3,
             })}
           />
         ))}

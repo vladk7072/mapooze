@@ -378,7 +378,6 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding-bottom: 37px;
     &__item {
       &-favorite {
         &:hover {
@@ -400,6 +399,13 @@
     &__filter {
       max-width: 204px;
     }
+    &__safe {
+      height: 100%;
+      overflow-y: visible;
+    }
+    .lands__items{
+      margin-right: 0 !important;
+    }
   }
   .popup-wrapper {
     &__filter {
@@ -407,6 +413,9 @@
       bottom: 16px;
       transform: none;
       overflow-y: auto;
+      &::before{
+        backdrop-filter: blur(0);
+      }
     }
   }
 }
@@ -915,6 +924,9 @@
         margin-right: 0;
       }
     }
+    &__filter{
+      padding-right: 12px;
+    }
   }
   .salepanel {
     &__nav {
@@ -1338,14 +1350,14 @@
     &::-webkit-scrollbar {
       width: 3px; /* высота всей полосы прокрутки */
     }
-    
+
     &::-webkit-scrollbar-track {
       margin-top: 16px;
       margin-bottom: 16px;
       border-radius: 2px;
       background: transparent; /* цвет зоны отслеживания */
     }
-    
+
     &::-webkit-scrollbar-thumb {
       background-color: #29abe2; /* цвет бегунка */
       border-radius: 2px; /* округлось бегунка */
@@ -1356,14 +1368,6 @@
       flex-direction: column;
       justify-content: space-between;
       grid-gap: 25px;
-    }
-  }
-}
-@media (max-height: 1020px) {
-  .salepanel {
-    &__safe {
-      height: calc(100vh - 180px);
-      overflow-y: auto;
     }
   }
 }

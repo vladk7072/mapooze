@@ -10,46 +10,14 @@ import { LandsBlock } from "../Lands/LandsBlock";
 import { WishlistBlock } from "./WishlistBlock";
 
 export const Wishlist: FC<LandsType> = ({ setOpenBar }) => {
-  const { isMobile, widthClient } = useAppSelector(
+  const { isMobile } = useAppSelector(
     (state) => state.mainPanelReducer
   );
-  const [isActiveList, setActiveList] = useState(false);
-  const [selectSocial, setSelectSocial] = useState<null | number>(null);
-
-  const selectHandler = (idx: number) => {
-    setActiveList(false);
-    setSelectSocial(idx);
-  };
 
   const [isVisibleSkeleton, setIsVisibleSkeleton] = useState({
     main: true,
     photo: true,
   });
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisibleSkeleton((prev) => ({ ...prev, main: false }));
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const selectLandRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (
-        selectLandRef.current &&
-        !selectLandRef.current.contains(event.target as Node)
-      ) {
-        setActiveList(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
 
   return (
     <div className="exchange saleplace addwallet">
