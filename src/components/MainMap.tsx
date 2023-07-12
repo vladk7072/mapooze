@@ -196,7 +196,8 @@ import { ZoomLogger } from "../utils/mapZoomLogger";
 // import { mauritiusPolygons } from "../data/mauritiusPolygons";
 // import { comorosPolygons } from "../data/comorosPolygons";
 // import { saotomeandprincipePolygons } from "../data/saotomeandprincipePolygons";
-import { philippinesPolygons } from "../data/philippinesPolygons";
+import { philippines1Polygons } from "../data/philippines1Polygons";
+import { philippines2Polygons } from "../data/philippines2Polygons";
 
 // южная Америка
 // import { argentina1Polygons } from "../data/argentina1Polygons";
@@ -605,7 +606,8 @@ export const MainMap: FC<MainMapType> = ({ isDarkTheme }) => {
     // northmacedoniaPolygons,
     // qatarPolygons,
     // thailandPolygons,
-    philippinesPolygons,
+    philippines1Polygons,
+    philippines2Polygons,
     // vietnamPolygons,
     // easttimorPolygons,
     // vanuatuPolygons,
