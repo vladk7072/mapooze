@@ -88,13 +88,13 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
     scrollToBottom();
   };
 
-  const playerRef = React.useRef(null);
-  useEffect(() => {
-    if (playerRef.current) {
-      //@ts-ignore
-      playerRef.current.seekTo(5);
-    }
-  }, []);
+  // const playerRef = React.useRef(null);
+  // useEffect(() => {
+  //   if (playerRef.current) {
+  //     //@ts-ignore
+  //     playerRef.current.seekTo(5);
+  //   }
+  // }, []);
 
   const [sliderState, setSliderState] = useState([
     false,
@@ -1116,11 +1116,11 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
                 >
                   <SwiperSlide aria-readonly>
                     <ReactPlayer
-                      ref={playerRef}
+                      // ref={playerRef}
                       url="https://www.youtube.com/watch?v=Oh15IyIlE3M"
                       playing
                       controls
-                      startTime={5}
+                      // startTime={5}
                       width="100%"
                       height={195}
                       style={{ borderRadius: 12, overflow: "hidden" }}
