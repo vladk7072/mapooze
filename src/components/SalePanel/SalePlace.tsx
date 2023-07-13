@@ -88,13 +88,13 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
     scrollToBottom();
   };
 
-  const playerRef = React.useRef(null);
-  useEffect(() => {
-    if (playerRef.current) {
-      //@ts-ignore
-      playerRef.current.seekTo(5);
-    }
-  }, []);
+  // const playerRef = React.useRef(null);
+  // useEffect(() => {
+  //   if (playerRef.current) {
+  //     //@ts-ignore
+  //     playerRef.current.seekTo(5);
+  //   }
+  // }, []);
 
   const [sliderState, setSliderState] = useState([
     false,
