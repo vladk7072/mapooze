@@ -7,6 +7,7 @@ import { landsData } from "./lands.data";
 import { LandsBlock } from "./LandsBlock";
 import { SaleNavigation } from "../../SalePanel/SaleNavigation";
 import { Skeleton } from "@mui/material";
+import { SwitchButton } from "../../../globalComponents/SwitchButton";
 
 export const Lands: FC<LandsType> = ({ setOpenBar }) => {
   const { isMobile, widthClient } = useAppSelector(
@@ -152,7 +153,7 @@ export const Lands: FC<LandsType> = ({ setOpenBar }) => {
               </ul>
             )}
           </div>
-
+          <SwitchButton staticValue={true} />
           <div className="exchange__top-subtitle">
             Total Value
             {isVisibleSkeleton.main ? (

@@ -7,7 +7,7 @@ export const SelectStatus: FC = () => {
   const [selectLand, setSelectLand] = useState<null | number>(null);
 
   const { isActiveStatusList } = useAppSelector((state) => state.filterPanelReducer);
-  const { setActiveStatusList } = filterPanel.actions;
+  const { setActiveStatusList, setActiveRegionsList, setActiveCountriesList } = filterPanel.actions;
   const dispatch = useAppDispatch();
 
   const selectLandHandler = (idx: number) => {
@@ -15,12 +15,21 @@ export const SelectStatus: FC = () => {
     dispatch(setActiveStatusList(false));
   };
 
+  const openSelectListHandler = () => {
+    dispatch(setActiveRegionsList(false))
+    dispatch(setActiveCountriesList(false))
+    dispatch(setActiveStatusList(true))
+    if(isActiveStatusList){
+      dispatch(setActiveStatusList(false))
+    }
+  }
+
   return (
     <div className="lands__input" style={{ marginTop: 35 }}>
       <div className="saleplace__general-trial saleplace__general-trial-select exchange__select">
         <div
           className="saleplace__general-trial-inputbox saleplace__general-select lands__list"
-          onClick={() => dispatch(setActiveStatusList(true))}
+          onClick={() => openSelectListHandler()}
         >
           <span
             className={

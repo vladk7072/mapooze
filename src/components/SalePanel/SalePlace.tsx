@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useRef, useState } from "react";
+import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectFade, Autoplay } from "swiper";
@@ -21,9 +21,12 @@ import InputMask from "react-input-mask";
 import { SalePlaceType } from "../../types/SalePanelTypes";
 import { useAppSelector } from "../../hooks/redux-hooks";
 import { HistoryPrice } from "./HistoryPrice";
+import ReactPlayer from "react-player";
 
 export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
-  const { day, month, year } = useAppSelector((state) => state.mainPanelReducer);
+  const { day, month, year } = useAppSelector(
+    (state) => state.mainPanelReducer
+  );
 
   const [isLike, setLike] = useState(false);
 
@@ -83,6 +86,24 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
   const setIsOpenYourProposeHandle = async () => {
     await setIsOpenYourPropose(!isOpenYourPropose);
     scrollToBottom();
+  };
+
+  const playerRef = React.useRef(null);
+  useEffect(() => {
+    if (playerRef.current) {
+      //@ts-ignore
+      playerRef.current.seekTo(5);
+    }
+  }, []);
+
+  const [sliderState, setSliderState] = useState([
+    false,
+    { delay: 1000, disableOnInteraction: false },
+  ]);
+  const [sliderMode, setSlideMode] = useState(0);
+  const handleAfterVideo = () => {
+    setSlideMode(1);
+    console.log();
   };
 
   return (
@@ -1090,11 +1111,20 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
                   modules={[Pagination, EffectFade, Autoplay]}
                   pagination={{ clickable: true }}
                   effect="fade"
-                  autoplay={{ delay: 1000, disableOnInteraction: false }}
+                  autoplay={sliderState[sliderMode]}
                   speed={2000}
                 >
-                  <SwiperSlide>
-                    <img src={img1} alt="" />
+                  <SwiperSlide aria-readonly>
+                    <ReactPlayer
+                      ref={playerRef}
+                      url="https://www.youtube.com/watch?v=Oh15IyIlE3M"
+                      playing
+                      controls
+                      width="100%"
+                      height={195}
+                      style={{ borderRadius: 12, overflow: "hidden" }}
+                      onEnded={() => handleAfterVideo()}
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img src={img2} alt="" />

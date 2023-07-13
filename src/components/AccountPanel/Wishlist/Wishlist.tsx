@@ -4,10 +4,8 @@ import "swiper/swiper-bundle.css";
 import { useAppSelector } from "../../../hooks/redux-hooks";
 import { LandsType } from "../../../types/AccountPanel/LandsTypes/LandsTypes";
 import { SaleNavigation } from "../../SalePanel/SaleNavigation";
-import { Skeleton } from "@mui/material";
-import { dataSocials } from "../Details/details.data";
-import { LandsBlock } from "../Lands/LandsBlock";
 import { WishlistBlock } from "./WishlistBlock";
+import { SwitchButton } from '../../../globalComponents/SwitchButton';
 
 export const Wishlist: FC<LandsType> = ({ setOpenBar }) => {
   const { isMobile } = useAppSelector(
@@ -40,8 +38,9 @@ export const Wishlist: FC<LandsType> = ({ setOpenBar }) => {
           </svg>
         </Link>
       )}
+      <SwitchButton staticValue={false} />
       <div className="addwallet__mob-title">Wishlist</div>
-      <div className="addwallet__error-title addwallet__error-title--active">
+      <div className="addwallet__error-title addwallet__error-title--active nonem">
         <span></span>
         <Link className="account__close" to="/">
           <svg
