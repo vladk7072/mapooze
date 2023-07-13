@@ -1111,6 +1111,7 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
                   modules={[Pagination, EffectFade, Autoplay]}
                   pagination={{ clickable: true }}
                   effect="fade"
+                  start
                   autoplay={sliderState[sliderMode]}
                   speed={2000}
                 >
@@ -1120,6 +1121,7 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
                       url="https://www.youtube.com/watch?v=Oh15IyIlE3M"
                       playing
                       controls
+                      startTime={5}
                       width="100%"
                       height={195}
                       style={{ borderRadius: 12, overflow: "hidden" }}
