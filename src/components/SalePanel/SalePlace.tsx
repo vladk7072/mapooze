@@ -88,13 +88,13 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
     scrollToBottom();
   };
 
-  // const playerRef = React.useRef(null);
-  // useEffect(() => {
-  //   if (playerRef.current) {
-  //     //@ts-ignore
-  //     playerRef.current.seekTo(5);
-  //   }
-  // }, []);
+  const playerRef = React.useRef(null);
+  useEffect(() => {
+    if (playerRef.current) {
+      //@ts-ignore
+      playerRef.current.seekTo(5);
+    }
+  }, []);
 
   const [sliderState, setSliderState] = useState([
     false,
@@ -1111,7 +1111,6 @@ export const SalePlace: FC<SalePlaceType> = ({ isOpenAside }) => {
                   modules={[Pagination, EffectFade, Autoplay]}
                   pagination={{ clickable: true }}
                   effect="fade"
-                  start
                   autoplay={sliderState[sliderMode]}
                   speed={2000}
                 >
